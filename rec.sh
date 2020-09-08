@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # written by cat-marin
 # depends on maim/slop and ffmpeg
 # Copyright © 2020 cat-marin
@@ -6,9 +6,8 @@
 # The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 # THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# default config
+# default config (to be expanded later)
 # DATE=$(date "+%F-%H-%M-%S")
-# FNAME="red-$DATE"
 # start config
 CONFIGDIR="$HOME/.config/rec.sh"
 CONFIG="$CONFIGDIR/config"
@@ -19,8 +18,8 @@ help_func() {
 cat << EOF
 written by cat-marin (see license within $0)
   -h  | --help : display this help text
-  -m1 | --mp4  : record selection and output to '~/.rec/FNAME.mp4'
-  -g  | --gif  : record selection and output to '~/.rec/FNAME.gif'
+  -m1 | --mp4  : record selection and output to '~/$CONFIGDIR/mp4/rec.sh-DATE.mp4'
+  -g  | --gif  : record selection and output to '~/$CONFIGDIR/gif/rec.sh-DATE.gif'
 EOF
 }
 
