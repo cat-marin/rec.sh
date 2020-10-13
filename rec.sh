@@ -28,7 +28,7 @@ mp4() {
     RES=$(echo $SLOP | cut -d "|" -f 2)
     XGRAB=$(echo $SLOP | cut -d "|" -f 3)
     mkdir -p $CONFIGDIR/mp4
-    ffmpeg -video_size $RES -framerate 25 -f x11grab -i :0.0+$XGRAB -c:v libx264 -pix_fmt yuv420p -preset ultrafast -crf 22 $CONFIGDIR/mp4/rec.sh-$DATE.mp4
+    ffmpeg -video_size $RES -framerate 25 -f x11grab -i :0.0+$XGRAB -c:v libx264 -pix_fmt yuv420p -preset ultrafast -crf 22 -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" $CONFIGDIR/mp4/rec.sh-$DATE.mp4
     echo "$CONFIGDIR/mp4/rec.sh-$DATE.mp4"
 }
 
